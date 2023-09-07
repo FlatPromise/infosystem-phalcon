@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/infosystem-phalcon/css/style.css" />
+  <script src="/infosystem-phalcon/js/indexjq.js"></script>
+  <title>Document</title>
+</head>
+
+<body>
+  <section class="section">
+    <div class="block is-fullwidth has-text-centered">
+      <h1 class="is-size-1 has-text-weight-bold">Users List</h1>
+      <?php
+
+      use Phalcon\Tag;
+
+      echo Tag::linkTo(
+        [
+          'action' => 'users/create',
+          'class' => 'button has-text-weight-semibold is-large is-success',
+          'text' => 'Create User'
+        ]
+      );
+      ?>
+    </div>
+    <div class="container is-centered">
+      <table id="users-table" class="table is-fullwidth has-text-centered">
+        <thead>
+          <tr>
+            <th>Full Name</th>
+            <th>Email</th>
+            <th>Birthday</th>
+            <th>Contact</th>
+          </tr>
+        </thead>
+        <tbody>
+          <?php
+          foreach ($userlist as $value) {
+          ?>
+            <tr>
+              <td>
+                <?php
+                if ($value['mname'] != '')
+                  echo $value["fname"] . ' ' . $value["mname"] . ' ' . $value["lname"];
+                else
+                  echo $value["fname"] . ' ' . $value["lname"];
+                ?>
+              </td>
+              <td>
+                <?php
+                echo $value['email'];
+                ?>
+              </td>
+              <td>
+                <?php
+                echo $value['bday'];
+                ?>
+              </td>
+              <td>
+                <?php
+                echo $value['contact'];
+                ?>
+              </td>
+              <td>
+                <div class="buttons">
+                  <?php
+                  echo Tag::linkTo(
+                    [
+                      'action' => 'users/edit',
+                      'query' => array('target-id' => $value['id']),
+                      'class' => 'button is-info',
+                      'text' => 'Edit'
+                    ]
+                  );
+
+                  echo Tag::linkTo(
+                    [
+                      'action' => 'users/view_user',
+                      'query' => array('target-id' => $value['id']),
+                      'class' => 'button is-warning',
+                      'text' => 'View'
+                    ]
+                  );
+                  ?>
+                  <button name='target-user-delete' class='button is-danger' value=<?php echo "'" . $value['id'] . "'" ?>>Delete</button>
+                </div>
+              </td>
+            </tr>
+          <?php
+
+          }
+          ?>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</body>

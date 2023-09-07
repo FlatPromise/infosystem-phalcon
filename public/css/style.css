@@ -1,0 +1,9 @@
+@import 'https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css';
+
+/* * {
+  outline: solid red 0.1px;
+} */
+
+.help {
+  display: none;
+}

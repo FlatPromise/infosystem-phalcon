@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/infosystem-phalcon/css/style.css" />
+  <script src="/infosystem-phalcon/js/createjq.js"></script>
+  <title>Document</title>
+</head>
+
+<body class="">
+  <section class="section">
+    <div class="block has-text-centered">
+      <h1 class="is-size-1">Create an Entry</h1>
+    </div>
+    <div class="container">
+      <div class="field">
+        <label for="" class="label">First Name (<span class="has-text-danger">*</span>)</label>
+        <div class="control">
+          <input required type="text" name="alphanumonly" id="fname" placeholder="First Name" class="input" />
+        </div>
+        <p id="fname-empty" class="help is-danger">
+          This field should not be empty
+        </p>
+      </div>
+
+      <div class="field">
+        <label for="" class="label">Middle Name</label>
+        <div class="control">
+          <input type="text" name="alphanumonly" id="mname" placeholder="Middle Name" class="input" />
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="" class="label">Last Name (<span class="has-text-danger">*</span>)</label>
+        <div class="control">
+          <input required type="text" name="alphanumonly" id="lname" placeholder="Last Name" class="input" />
+        </div>
+        <p id="lname-empty" class="help is-danger">
+          This field should not be empty
+        </p>
+      </div>
+
+      <div class="field">
+        <label for="" class="label">Email (<span class="has-text-danger">*</span>)</label>
+        <div class="control">
+          <input required type="email" name="" id="email" placeholder="Email" class="input" />
+        </div>
+        <p id="email-empty" class="help is-danger">
+          This field should be a valid email
+        </p>
+      </div>
+
+      <label for="" class="label">Birthday (<span class="has-text-danger">*</span>)</label>
+
+      <div class="field">
+        <div class="field is-horizontal">
+          <div class="field-body">
+            <div class="field">
+              <p class="control is-expanded">
+                <input required type="date" name="" id="bdaydefault" class="input" />
+              </p>
+            </div>
+            <div class="field">
+              <p class="control is-expanded">
+                <input type="text" name="" id="bdayconverted" disabled class="input" />
+              </p>
+            </div>
+          </div>
+        </div>
+        <p id="bday-empty" class="help is-danger is-fullwidth">
+          This field should not be empty
+        </p>
+      </div>
+
+      <div class="field">
+        <label for="" class="label">Address (<span class="has-text-danger">*</span>)</label>
+        <div class="control">
+          <input required type="text" name="" id="address" placeholder="Address" class="input" />
+        </div>
+        <p id="address-empty" class="help is-danger">
+          This field should not be empty
+        </p>
+      </div>
+
+      <div class="field">
+        <label for="" class="label">Contact Number (<span class="has-text-danger">*</span>)</label>
+        <div class="control">
+          <input required type="tel" name="" id="contact" placeholder="ex. 09123456678" class="input" maxlength="11" />
+        </div>
+        <p id="contact-empty" class="help is-danger">
+          This field should be a valid PH phone number
+        </p>
+      </div>
+
+      <div id="hobbies-container">
+        <label for="" class="label">Hobbies (<span class="has-text-danger">*</span>)</label>
+        <div class="buttons is-centered">
+          <button disabled class="button is-info" id="add-hobby-button">Add a hobby</button>
+        </div>
+        <div class="field">
+          <div class="control">
+            <input required type="text" name="hobby-input" id="hobby-main" placeholder="Hobbies" class="input" />
+          </div>
+        </div>
+        <p id="hobbies-empty" class="help is-danger">
+          This field should not be empty
+        </p>
+      </div>
+    </div>
+
+    <div class="mt-6 container">
+      <div class="buttons is-centered is-grouped are-large">
+        <?php
+
+        use Phalcon\Tag;
+
+        echo Tag::linkTo(
+          [
+            'action' => 'users',
+            'class' => 'button is-light is-danger',
+            'text' => 'Cancel'
+          ]
+        );
+        ?>
+        <button id="create-button" type="submit" class="button is-light is-info">
+          Create
+        </button>
+      </div>
+    </div>
+  </section>
+</body>
+
+</html>

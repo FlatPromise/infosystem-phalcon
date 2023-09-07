@@ -1,0 +1,74 @@
+{
+    "users": [
+        {
+            "fname": "Edgar",
+            "mname": "",
+            "lname": "Cerda",
+            "email": "epicerds2@gmail.com",
+            "bday": "2002-05-04",
+            "address": "9049 San Nicolas",
+            "contact": "09275461148",
+            "hobbies": "Gaming"
+        },
+        {
+            "fname": "John",
+            "mname": "D",
+            "lname": "Doe",
+            "email": "junniboy@yahoo.com",
+            "bday": "2000-03-12",
+            "address": "123 Sample Address, 16 Blocks",
+            "contact": "09123123432",
+            "hobbies": "Ewan"
+        },
+        {
+            "fname": "Jane",
+            "mname": "D",
+            "lname": "Doe",
+            "email": "sample@outlook.com",
+            "bday": "1992-12-12",
+            "address": "3rd flr., 351 Sample Address, Sira Lupa",
+            "contact": "09345678890",
+            "hobbies": "Sampol"
+        },
+        {
+            "fname": "Brittney",
+            "mname": "",
+            "lname": "Cameron",
+            "email": "brittneycameron@samplemail.com",
+            "bday": "1998-10-05",
+            "address": "3/F LPJ Building, 84 F. Roman Street, Pulang Bato",
+            "contact": "09432145567",
+            "hobbies": "Reading"
+        },
+        {
+            "fname": "Carly",
+            "mname": "Dagupan",
+            "lname": "Mcbride",
+            "email": "carlymcbride@outlook.com",
+            "bday": "2000-11-25",
+            "address": "3-B Industrial Road 1400",
+            "contact": "09234543321",
+            "hobbies": "Sleep"
+        },
+        {
+            "fname": "Matteo",
+            "mname": "",
+            "lname": "Hull",
+            "email": "mathull@gmail.com",
+            "bday": "1975-10-11",
+            "address": "Cabrera Building II. 64 Timog Ave",
+            "contact": "09455432213",
+            "hobbies": "Watch Clouds"
+        },
+        {
+            "fname": "Frederic",
+            "mname": "",
+            "lname": "Melton",
+            "email": "fredmelt@yahoo.com",
+            "bday": "1982-11-13",
+            "address": "Merchan Street corner Zamora Street, Nimars Marketing",
+            "contact": "09213453321",
+            "hobbies": "Sleep"
+        }
+    ]
+}

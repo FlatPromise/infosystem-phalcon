@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/infosystem-phalcon/css/style.css" />
+  <script src="/infosystem-phalcon/js/viewjq.js"></script>
+  <title>Document</title>
+</head>
+
+<body>
+  <section class="section">
+    <div class="container is-fullwidth">
+      <div class="block">
+        <h1 class="is-size-1">User Information</h1>
+      </div>
+
+      <div class="block">
+        <h1 class="is-size-2 has-text-weight-semibold">Full Name</h1>
+        <p class="is-size-4 has-text-weight-slim">
+          <?php
+          if ($mname != '') {
+            echo $fname . ' ' . $mname . ' ' . $lname;
+          } else {
+            echo $fname . ' ' . $lname;
+          }
+          ?>
+        </p>
+      </div>
+
+      <div class="block">
+        <h1 class="is-size-2 has-text-weight-semibold">Email</h1>
+        <p class="is-size-4 has-text-weight-slim">
+          <?php
+          echo $email;
+          ?>
+        </p>
+      </div>
+
+      <div class="block">
+        <h1 class="is-size-2 has-text-weight-semibold">Bday</h1>
+        <p class="is-size-4 has-text-weight-slim">
+          <?php
+          echo $bday;
+          ?>
+        </p>
+      </div>
+
+      <div class="block">
+        <h1 class="is-size-2 has-text-weight-semibold">Contact</h1>
+        <p class="is-size-4 has-text-weight-slim">
+          <?php
+          echo $contact;
+          ?>
+        </p>
+      </div>
+
+      <div class="block">
+        <table class="table has-text-centered">
+          <thead>
+            <tr>
+              <th class="has-text-centered is-size-1">Hobbies</th>
+            </tr>
+          </thead>
+          <tbody>
+            <?php
+            foreach ($caughtHobbies as $hobby) {
+            ?>
+              <tr>
+                <td class="is-size-4">
+                  <?php
+                  echo $hobby;
+                  ?>
+                </td>
+              </tr>
+            <?php
+            }
+            ?>
+          </tbody>
+        </table>
+      </div>
+      <?php
+
+      use Phalcon\Tag;
+
+      echo Tag::linkTo(
+        [
+          'action' => 'users',
+          'class' => 'button is-fullwidth is-link is-outlined',
+          'text' => 'Go Back'
+        ]
+      );
+      ?>
+    </div>
+  </section>
+</body>
+
+</html>
