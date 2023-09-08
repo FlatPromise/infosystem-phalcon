@@ -1,5 +1,4 @@
 <?php
-
 /*
  * Modified: prepend directory path of current file, because of this file own different ENV under between Apache and command line.
  * NOTE: please remove this comment.
@@ -25,7 +24,7 @@ return new \Phalcon\Config([
         'pluginsDir'     => APP_PATH . '/plugins/',
         'libraryDir'     => APP_PATH . '/library/',
         'cacheDir'       => BASE_PATH . '/cache/',
-        'baseUri'        => '/infosystem-phalcon/',
-        'staticUri'     => '/infosystem-phalcon/'
+        'baseUri'        => '/infosystem-phalcon-older/',
+        'staticUri'        => '/infosystem-phalcon-older/',
     ]
 ]);

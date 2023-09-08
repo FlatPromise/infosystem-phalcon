@@ -179,7 +179,7 @@ $(function () {
         success: (response) => {
           if (response === 'Success') {
             alert('User Has Been Created');
-            window.location.href = '/infosystem-phalcon/users';
+            window.location.href = '/infosystem-phalcon-older/users';
           } else {
             alert('An Error has Occured');
           }
@@ -321,7 +321,7 @@ $(function () {
         success: (response) => {
           if (response === 'Success') {
             alert('User Has Been Editted');
-            window.location.href = '/infosystem-phalcon/users';
+            window.location.href = '/infosystem-phalcon-older/users';
           } else {
             alert('An Error has Occured');
           }

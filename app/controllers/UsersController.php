@@ -208,7 +208,7 @@ class UsersController extends \Phalcon\Mvc\Controller
         }
     }
 
-    public function viewuserAction()
+    public function view_userAction()
     {
         $request = new Request();
         if ($request->get('target-id')) {

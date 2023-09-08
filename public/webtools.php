@@ -19,12 +19,19 @@
   +------------------------------------------------------------------------+
 */
 
-$uri = urldecode(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
+use Phalcon\Bootstrap;
 
-if ($uri !== '/' && file_exists(__DIR__ . '/public' . $uri)) {
-    return false;
+include 'webtools.config.php';
+include PTOOLSPATH . '/bootstrap/autoload.php';
+
+$bootstrap = new Bootstrap([
+    'ptools_path' => PTOOLSPATH,
+    'ptools_ip'   => PTOOLS_IP,
+    'base_path'   => BASE_PATH,
+]);
+
+if (APPLICATION_ENV === ENV_TESTING) {
+    return $bootstrap->run();
+} else {
+    echo $bootstrap->run();
 }
-
-$_GET['_url'] = $_SERVER['REQUEST_URI'];
-
-require_once __DIR__ . '/public/index.php';

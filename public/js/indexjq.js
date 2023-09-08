@@ -12,7 +12,7 @@ $(function () {
         success: (response) => {
           if (response === 'deleted') {
             alert('User has been deleted!');
-            window.location.href = '/infosystem-phalcon/users';
+            window.location.href = '/infosystem-phalcon-older/users';
           } else {
             alert('An error has occured');
           }
